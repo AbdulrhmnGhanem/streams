@@ -7,7 +7,7 @@ import StreamList from "./streams/StreamList";
 import StreamDelete from "./streams/StreamDelete";
 import StreamCreate from "./streams/StreamCreate";
 import StreamShow from "./streams/StreamShow";
-import StreamEdit from "./streams/StreamEdit";
+import StreamEdits from "./streams/StreamEdits";
 
 const App = () => {
     return <div className="ui container">
@@ -16,7 +16,7 @@ const App = () => {
                 <Header/>
                 <Route path="/" exact component={StreamList}/>
                 <Route path="/streams/new" exact component={StreamCreate}/>
-                <Route path="/streams/edit" exact component={StreamEdit}/>
+                <Route path="/streams/edit/:id" exact component={StreamEdits}/>
                 <Route path="/streams/delete" exact component={StreamDelete}/>
                 <Route path="/streams/show" exact component={StreamShow}/>
             </div>
