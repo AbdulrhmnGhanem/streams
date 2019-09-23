@@ -27,7 +27,7 @@ export const createStream = formValues => async (dispatch, getState) => {
     const { userId } = getState().auth;
     const response = await streams.post('/streams', { ...formValues, userId });
 
-    dispatch({ type: CREATE_STREAM, payload: response.data })
+    dispatch({ type: CREATE_STREAM, payload: response.data });
 
     // Programmatically navigate user to streams list after creating new stream
     history.push('/')
@@ -55,5 +55,6 @@ export const editStream = (id, formValues) => async dispatch => {
 export const deleteStream = id => async dispatch => {
     await streams.delete(`/streams/${id}`);
 
-    dispatch({type: DELETE_STREAM, payload: id})
+    dispatch({type: DELETE_STREAM, payload: id});
+    history.push('/')
 };
